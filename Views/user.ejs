@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+    
+    <div class="container mt-5">
+        <h1>Hej <%= name %>.</h1>
+
+        <form action="/logout?_method=DELETE" method="POST"> 
+            <button type="submit" class="btn btn-secondary">Log ud</button>
+        </form>
+    </div>
+
+<%- include('partials/footer') %>
