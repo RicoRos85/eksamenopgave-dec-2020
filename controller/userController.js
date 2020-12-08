@@ -1,38 +1,48 @@
-const User       = require('../models/users.js');
+const User = require("../models/users.js");
+const LocalStorage = require("node-localstorage").LocalStorage;
+const localStorage = new LocalStorage("./localStorage");
+const userData = "../userData.json";
 
-const users_index = (req, res) => {
-    const posts = [
-        {
-            username: "Rico",
-            title: "Post"
-        },
-        {
-            username: "Milo",
-            title: "Post 2"
-        }
-    ]
-}
+// check if user exists
+const checkOrCreateUser = (newUserData) => {
+  const data = localStorage.getItem("userData.json");
+  let users = JSON.parse(data);
+  console.log("-> ", newUserData.email);
+  let obj = users.users.find((o) => o.email === newUserData.email);
+  let index = users.users.indexOf(obj);
 
+  index === -1 ? addNewUser(newUserData, users) : null;
+  return users;
+};
 
+// add user.
+const addNewUser = (newUser, oldUsers) => {
+  let allUsers = { ...oldUsers };
+  allUsers.users.push(newUser);
+  localStorage.setItem("userData.json", JSON.stringify(allUsers));
+  return null;
+};
 
-function createUser(req) {
-    new User (req);
-}
+// login user
+const loginUser = (user) => {
+  const data = localStorage.getItem("userData.json");
+  let users = JSON.parse(data);
+  let obj = users.users.find((o) => o.email === user.email);
+  let index = users.users.indexOf(obj);
 
-function updateUser() {
+  let loggedIn = false;
 
-}
+  if (index !== -1) {
+    loggedIn = users.users[index].password === user.password ? true : false;
+  }
 
-function deleteUSer() {
+  return loggedIn;
+};
 
-}
-
-function testLocalStorage() {
-    localStorage.setItem('id', 'yessir');
-    console.log("Det virker også!");
-}
-
+function updateUser() {}
+function deleteUSer() {}
 
 module.exports = {
-    createUser
-}
+  checkOrCreateUser,
+  loginUser,
+};

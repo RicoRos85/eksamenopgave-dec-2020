@@ -1,12 +1,12 @@
 <%- include('partials/header') %>
-  
+
 <div class="container mt-5">
     <a href="/" class="btn btn-lg btn-primary">Tilbage</a>
     <h1>Opret bruger</h1>
-    <form method="POST" action="/user/register" autocomplete="off">
+    <form method="POST" action="/user/registerNew" autocomplete="off">
         <div class="form-group">
             <label for="name">Navn</label>
-            <input type="text" name="name" placeholder="Indtast dit navn" class="form-control" id="inputName" required>
+            <input type="text" name="userName" placeholder="Indtast dit navn" class="form-control" id="inputName" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
