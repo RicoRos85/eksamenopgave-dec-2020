@@ -3,21 +3,21 @@
 <div class="container mt-5">
     <a href="/" class="btn btn-lg btn-primary">Tilbage</a>
     <h1>Opret bruger</h1>
-    <form method="POST" action="/register" autocomplete="off">
+    <form method="POST" action="/user/register" autocomplete="off">
         <div class="form-group">
             <label for="name">Navn</label>
             <input type="text" name="name" placeholder="Indtast dit navn" class="form-control" id="inputName" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Indtast din email" class="form-control" id="inputEmail" required>
+            <input type="email" name="email" placeholder="Indtast din email" class="form-control" id="inputEmail" autocomplete="email" required>
         </div>
         <div class="form-group">
             <label for="password">Kodeord</label>
-            <input type="password" placeholder="Indtast dit kodeord" name="password" class="form-control" id="inputPassword" required>
+            <input type="password" placeholder="Indtast dit kodeord" name="password" class="form-control" id="inputPassword" autocomplete="new-password" required>
         </div>
         <button type="submit" class="btn btn-primary">Opret</button>
-        <a href="/login" type="submit" class="btn btn-secondary">Allerede bruger? Log ind</a>
+        <a href="/user/login" type="submit" class="btn btn-secondary">Allerede bruger? Log ind</a>
     </form>
 </div>
 
