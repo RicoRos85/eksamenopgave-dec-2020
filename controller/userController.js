@@ -1,8 +1,30 @@
 const User       = require('../models/users.js');
 
 const users_index = (req, res) => {
-    console.log("YEYESYES");
-    localStorage.setItem('id',999999);
+    const posts = [
+        {
+            username: "Rico",
+            title: "Post"
+        },
+        {
+            username: "Milo",
+            title: "Post 2"
+        }
+    ]
+}
+
+
+
+function createUser(req) {
+    new User (req);
+}
+
+function updateUser() {
+
+}
+
+function deleteUSer() {
+
 }
 
 function testLocalStorage() {
@@ -12,5 +34,5 @@ function testLocalStorage() {
 
 
 module.exports = {
-    users_index
+    createUser
 }

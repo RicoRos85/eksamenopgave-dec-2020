@@ -34,7 +34,10 @@ const router         = express.Router();
 //     }
 // ];
 
-router.get('/users/all', userController.users_index);
+router.get('/users/all',  (req, res) => {
+    res.body.name = "Rico";
+    userController.createUser(req.body.name)
+});
 
 
 // Passport - Function for finding the User based on the email
@@ -102,12 +105,9 @@ router.get("/user/login", checkNotAuthenticated, (req, res) => {
 });
 
 
-
 router.get("/user/register", checkNotAuthenticated, (req, res) => {
     res.render('register');
 });
-
-
 
 
 router.post('/user/register',  (req, res) => {
