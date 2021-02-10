@@ -1,9 +1,1 @@
-{
-  "users": [
-    { "userName": "john", "email": "john@email.com", "password": "123" },
-    { "userName": "hey", "email": "new@hey.dj", "password": "123456789" },
-    { "userName": "hey", "email": "new@gmail.dj", "password": "123456789" },
-    { "userName": "danni", "email": "da@ok.dk", "password": "asjkldasd" },
-    { "userName": "oke", "email": "okd@asd.dk", "password": "asdasdasd" }
-  ]
-}
+{"users":[{"userName":"john","email":"john@email.com","password":"123"},{"userName":"hey","email":"new@hey.dj","password":"123456789"},{"userName":"hey","email":"new@gmail.dj","password":"123456789"},{"userName":"danni","email":"da@ok.dk","password":"asjkldasd"},{"userName":"oke","email":"okd@asd.dk","password":"asdasdasd"},{"userName":"Rico","email":"rico.rosenkrans@inovium.dk","password":"1234"},{"userName":"Ricoco","email":"rio@rico.dk","password":"123"},{"userName":"RicoRos","email":"rico@mail.com","password":"123"},{"userName":"Ole","email":"ole@mail.com","password":"123"}]}

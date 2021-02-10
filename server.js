@@ -12,13 +12,10 @@ const flash         = require("express-flash");
 const session       = require("express-session"); 
 const userRoutes    = require('./routes/userRoutes');
 
+// Initiate Express
 const app           = express();
 // Set the port number
 const PORT = 3000;
-
-
-
-
 
 
 // Allow application to accept JSON
@@ -30,10 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set("views",path.resolve(__dirname,'views')); 
 // Set the view engine and load the 'ejs' template engine module in the app
 app.set("view engine", "ejs");
-
-// 
-app.use(express.static(__dirname + '/public'));
-
 
 
 app.use(flash());
@@ -54,6 +47,7 @@ app.get("/", (req, res) => {
 // Import '/routes/userRoutes.js'
 app.use(userRoutes);
 
+// Listen for the port, and display everything is working on the console
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}.`))
 
 module.exports = app;
